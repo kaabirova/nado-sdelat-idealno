@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nado-sdelat-idealno</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="media-wrapper">
+    <div class="container">
+        <h2 class="container-left">НАДО</h2>
+        <h2 class="container-center">СДЕЛАТЬ</h2>
+
+        <!-- Интерактивное слово "ИДЕАЛЬНО*" -->
+        <label for="modal-toggle" class="container-right">ИДЕАЛЬНО*</label>
+    </div>
+
+    <!-- Полупрозрачный белый фон (оверлей) -->
+    <div class="overlay"></div>
+
+    <!-- Скрытый чекбокс, который управляет модальным окном и фоном -->
+    <input type="checkbox" id="modal-toggle">
+
+    <!-- Само модальное окно, которое появляется поверх -->
+    <div class="modal-window">
+        <p>На самом деле нет.<br>Важнее — научиться ошибаться.</p>
+        <!-- Кнопка закрытия (тоже лейбл, клик по нему сбрасывает чекбокс) -->
+        <label for="modal-toggle" class="close-btn">×</label>
+    </div>
+
+    <video class="video" src="video/cover-video.mp4" autoplay loop muted playsinline></video>
+</div>
+</body>
+</html>

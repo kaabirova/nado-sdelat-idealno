@@ -1,26 +1,99 @@
+
 html{
     height: 100%;
 }
+
 body{
-    height: inherit;
-    position: relative;
     width: 800px;
+    height: inherit;
 }
+.video{
+    width:800px;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    position:absolute;
+
+}
+
 .container{
-    font-size: 116px;
+    z-index: 3;
+    font-size: 36px;
     text-align: center;
     font-family: Raleway, sans-serif;
     line-height: 20px;
-    margin-top:60px;
     position: absolute;
-    z-index: 1;
-}
-.video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    z-index: 0;
+    padding-left: 240px;
 }
 
+.overlay{
+     position: absolute;
+    z-index: 2;
+    width:100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 0;
+}
+
+.container-right {
+    cursor: pointer;
+    display: inline-block; /* Чтобы ховер срабатывал строго по размеру текста */
+    margin:0;
+    padding:0;
+}
+
+body:has(.container-right:active) .overlay {
+    opacity: 1;
+    transition: opacity 0.1s ease; /* Быстрое появление при клике */
+}
+
+.page-title{
+    width:100px;
+    height:30px;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    position:relative;
+    z-index: 3;
+}
+/*.page-title:hover::before {*/
+/*    content: 'На самом деле нет.\AВажнее &mdash; научиться ошибаться.';*/
+/*    white-space: pre;*/
+
+/*    !* Стилизация всплывающего окна *!*/
+/*    position: absolute;*/
+/*    bottom: 40px; !* Появляется чуть выше квадрата *!*/
+/*    left: 0;*/
+/*    width: 250px;*/
+/*    padding: 12px;*/
+/*    background-color: #ffffff;*/
+/*    color: #000000;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);*/
+/*    font-family: Raleway, sans-serif;*/
+/*    font-size: 14px;*/
+/*    line-height: 1.4;*/
+/*    z-index: 10;*/
+/*}*/
+
+.page-title:hover::before {
+    content: 'На самом деле нет.\AВажнее — научиться ошибаться.';
+    white-space: pre-wrap; /* Перенос строк */
+
+    /* Превращаем в самостоятельный блок (модальное окошко) */
+    display: block;
+    position: absolute;
+    bottom: 40px; /* Появляется выше квадрата */
+    left: 0;
+    width: 250px;
+    padding: 12px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    z-index: 10;
+}

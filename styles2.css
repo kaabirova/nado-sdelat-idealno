@@ -1,0 +1,84 @@
+
+html{
+    height: 100%;
+}
+
+body{
+    width: 800px;
+    height: inherit;
+}
+.video{
+    width:800px;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    position:absolute;
+
+}
+
+.container{
+    z-index: 3;
+    font-size: 36px;
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    line-height: 20px;
+    position: absolute;
+    padding-left: 240px;
+}
+
+.overlay{
+    position: absolute;
+    z-index: 2;
+    width:100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 0;
+}
+
+.page-title {
+    width: 200px;
+    height: 30px;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    position: relative;
+    z-index: 3;
+    display: none;
+
+}
+
+.container-right {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.container-right:hover::before {
+    content: 'На самом деле нет. Важнее — научиться ошибаться.';
+    white-space: normal;
+
+    display: block;
+    position: absolute;
+    bottom: 70%;
+    left: 90%;
+    transform: translateX(-50%);
+    width: 250px;
+    padding: 12px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: Railway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    z-index: 10;
+
+}
+.media-wrapper:has(.container-right:hover) .overlay {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
